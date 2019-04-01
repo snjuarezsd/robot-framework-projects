@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180310 15:27:05.354" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Development\Robot-Scripts\Amazon\tests\amazon.robot" id="s1" name="Amazon">
+<test id="s1-t1" name="User must sign in to check out">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.amazon.com</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20180310 15:27:05.499" level="INFO">Opening browser 'Chrome' to base url 'http://www.amazon.com'</msg>
+<status status="PASS" endtime="20180310 15:27:11.530" starttime="20180310 15:27:05.499"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180310 15:27:12.664" starttime="20180310 15:27:11.530"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:12.665" starttime="20180310 15:27:05.499"></status>
+</kw>
+<kw name="Search For Products" library="Amazon.GUI">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Your Amazon.com</arg>
+</arguments>
+<status status="PASS" endtime="20180310 15:27:12.863" starttime="20180310 15:27:12.667"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Ferrari 458</arg>
+</arguments>
+<msg timestamp="20180310 15:27:12.864" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'</msg>
+<status status="PASS" endtime="20180310 15:27:13.316" starttime="20180310 15:27:12.863"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="nav-search"]/form/div[2]/div/input</arg>
+</arguments>
+<msg timestamp="20180310 15:27:13.317" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
+<status status="PASS" endtime="20180310 15:27:16.757" starttime="20180310 15:27:13.316"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>results for "Ferrari 458"</arg>
+</arguments>
+<status status="PASS" endtime="20180310 15:27:16.856" starttime="20180310 15:27:16.757"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:16.856" starttime="20180310 15:27:12.666"></status>
+</kw>
+<kw name="Select Product From Search Results" library="Amazon.GUI">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180310 15:27:18.858" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180310 15:27:18.858" starttime="20180310 15:27:16.858"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=#result_0 a.s-access-detail-page</arg>
+</arguments>
+<msg timestamp="20180310 15:27:18.858" level="INFO">Clicking link 'css=#result_0 a.s-access-detail-page'.</msg>
+<status status="PASS" endtime="20180310 15:27:21.456" starttime="20180310 15:27:18.858"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Back to search results</arg>
+</arguments>
+<status status="PASS" endtime="20180310 15:27:21.518" starttime="20180310 15:27:21.456"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:21.518" starttime="20180310 15:27:16.857"></status>
+</kw>
+<kw name="Add Product To Cart" library="Amazon.GUI">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180310 15:27:23.520" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180310 15:27:23.520" starttime="20180310 15:27:21.519"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=add-to-cart-button</arg>
+</arguments>
+<msg timestamp="20180310 15:27:23.520" level="INFO">Clicking element 'id=add-to-cart-button'.</msg>
+<status status="PASS" endtime="20180310 15:27:24.505" starttime="20180310 15:27:23.520"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Added to Cart</arg>
+</arguments>
+<status status="PASS" endtime="20180310 15:27:24.665" starttime="20180310 15:27:24.505"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:24.665" starttime="20180310 15:27:21.519"></status>
+</kw>
+<kw name="Begin Checkout" library="Amazon.GUI">
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=hlb-ptc-btn-native</arg>
+</arguments>
+<msg timestamp="20180310 15:27:24.666" level="INFO">Clicking link 'id=hlb-ptc-btn-native'.</msg>
+<status status="PASS" endtime="20180310 15:27:25.409" starttime="20180310 15:27:24.666"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20180310 15:27:26.409" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180310 15:27:26.409" starttime="20180310 15:27:25.409"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>id=signInSubmit</arg>
+</arguments>
+<msg timestamp="20180310 15:27:26.434" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" class="a-ember a-transition a-transform a-opacity a-border-image a-border-radius a-box-shadow a-text-stroke a-text-shadow a-touch-scrolling a-transform3d a-hires a-gradients a-local-storage a-textarea-placeholder a-input-placeholder a-autofocus a-webworker a-history a-geolocation a-drag-drop a-svg a-canvas a-video a-audio a-js a-ws a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-hires a-transform3d a-touch-scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition" data-19ax5a9jf="dingo" data-aui-build-date="3.17.16.3-2017-10-11"&gt;&lt;head&gt;&lt;script async="" src="https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-69ab801358dfe32338d0619802ae6aabc188b1bd._V2_.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;var ue_t0=ue_t0||+new Date();&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+var ue_csm = window,
+    ue_hob = +new Date();
+(function(d){var e=d.ue=d.ue||{},f=Date.now||function(){return+new Date};e.d=function(b){return f()-(b?0:d.ue_t0)};e.stub=function(b,a){if(!b[a]){var c=[];b[a]=function(){c.push([c.slice.call(arguments),e.d(),d.ue_id])};b[a].replay=function(b){for(var a;a=c.shift();)b(a[0],a[1],a[2])};b[a].isStub=1}};e.exec=function(b,a){return function(){if(1==window.ueinit)try{return b.apply(this,arguments)}catch(c){ueLogError(c,{attribution:a||"undefined",logLevel:"WARN"})}}}})(ue_csm);
+
+
+    var ue_err_chan = 'jserr-rw';
+(function(d,e){function h(f,b){if(!(a.ec&amp;gt;a.mxe)&amp;amp;&amp;amp;f){a.ter.push(f);b=b||{};var c=f.logLevel||b.logLevel;c&amp;amp;&amp;amp;c!==k&amp;amp;&amp;amp;c!==m&amp;amp;&amp;amp;c!==n&amp;amp;&amp;amp;c!==p||a.ec++;c&amp;amp;&amp;amp;c!=k||a.ecf++;b.pageURL=""+(e.location?e.location.href:"");b.logLevel=c;b.attribution=f.attribution||b.attribution;a.erl.push({ex:f,info:b})}}function l(a,b,c,e,g){d.ueLogError({m:a,f:b,l:c,c:""+e,err:g,fromOnError:1,args:arguments},g?{attribution:g.attribution,logLevel:g.logLevel}:void 0);return!1}var k="FATAL",m="ERROR",n="WARN",p="DOWNGRADED",a={ec:0,ecf:0,
+pec:0,ts:0,erl:[],ter:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&amp;amp;&amp;amp;a.pec&amp;lt;a.ec&amp;amp;&amp;amp;d.uex("at");a.pec=a.ec},1E4)}};l.skipTrace=1;h.skipTrace=1;h.isStub=1;d.ueLogError=h;d.ue_err=a;e.onerror=l})(ue_csm,window);
+
+
+var ue_id = 'WSEG6RBZNQSTMDJVPSKD',
+    ue_url = '/ap/uedata',
+    ue_navtiming = 1,
+    ue_mid = 'ATVPDKIKX0DER',
+    ue_sid = '139-5990735-5698606',
+    ue_sn = 'www.amazon.com',
+    ue_furl = 'fls-na.amazon.com',
+    ue_surl = '//unagi-na.amazon.com/1/events/com.amazon.csm.nexusclient.prod',
+    ue_fcsn = 1,
+    ue_urt = 3,
+    ue_rpl_ns = 'cel-rpl',
+    ue_fpf = '//fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:139-5990735-5698606:WSEG6RBZNQSTMDJVPSKD$uedata=s:',
+
+    ue_swi = 1;
+function ue_viz(){(function(c,e,a){function k(b){if(c.ue.viz.length&amp;lt;p&amp;amp;&amp;amp;!l){var a=b.type;b=b.originalEvent;/^focus./.test(a)&amp;amp;&amp;amp;b&amp;amp;&amp;amp;(b.toElement||b.fromElement||b.relatedTarget)||(a=e[m]||("blur"==a||"focusout"==a?"hidden":"visible"),c.ue.viz.push(a+":"+(+new Date-c.ue.t0)),"visible"==a&amp;amp;&amp;amp;(ue.isl&amp;amp;&amp;amp;uex("at"),l=1))}}for(var l=0,f,g,m,n=["","webkit","o","ms","moz"],d=0,p=20,h=0;h&amp;lt;n.length&amp;amp;&amp;amp;!d;h++)if(a=n[h],f=(a?a+"H":"h")+"idden",d="boolean"==typeof e[f])g=a+"visibilitychange",m=(a?a+"V":"v")+"isibilityState";
+k({});d&amp;amp;&amp;amp;e.addEventListener(g,k,0);c.ue&amp;amp;&amp;amp;d&amp;amp;&amp;amp;(c.ue.pageViz={event:g,propHid:f})})(ue_csm,document,window)};
+
+(function(a,g){function v(a){return a&amp;amp;&amp;amp;a.replace&amp;amp;&amp;amp;a.replace(/^\s+|\s+$/g,"")}function p(a){return"undefined"===typeof a}function t(d,c,e,h){var g=h||+new Date,m;a.ueam&amp;amp;&amp;amp;a.ueam(c,d,h);if(c||p(e)){if(d)for(m in h=c?f("t",c)||f("t",c,{}):a.ue.t,h[d]=g,e)e.hasOwnProperty(m)&amp;amp;&amp;amp;f(m,c,e[m]);return g}}function f(d,c,e){var f=a.ue,g=c&amp;amp;&amp;amp;c!=f.id?f.sc[c]:f;g||(g=f.sc[c]={});"id"==d&amp;amp;&amp;amp;e&amp;amp;&amp;amp;(f.cfa2=1);return g[d]=e||g[d]}function w(d,c,e,f,g){e="on"+e;var m=c[e];"function"===typeof m?d&amp;amp;&amp;amp;(a.ue.h[d]=m):m=function(){};
+c[e]=g?function(a){f(a);m(a)}:function(a){m(a);f(a)};c[e]&amp;amp;&amp;amp;(c[e].isUeh=1)}function A(d,c,e){function h(c,e){var b=[c],D=0,g={},m,h;e?(b.push("m=1"),g[e]=1):g=a.ue.sc;for(h in g)if(g.hasOwnProperty(h)){var k=f("wb",h),l=f("t",h)||{},q=f("t0",h)||a.ue.t0,n;if(e||2==k){k=k?D++:"";b.push("sc"+k+"="+h);for(n in l)3&amp;gt;=n.length&amp;amp;&amp;amp;!p(l[n])&amp;amp;&amp;amp;null!==l[n]&amp;amp;&amp;amp;b.push(n+k+"="+(l[n]-q));b.push("t"+k+"="+l[d]);if(f("ctb",h)||f("wb",h))m=1}}!x&amp;amp;&amp;amp;m&amp;amp;&amp;amp;b.push("ctb=1");return b.join("&amp;amp;")}function z(c,b,e,d){if(c){var f=a.ue_err,
+h;d&amp;amp;&amp;amp;a.ue.log||(h=new Image,a.ue.iel.push(h),h.src=c);E?a.ue_fpf&amp;amp;&amp;amp;g.encodeURIComponent&amp;amp;&amp;amp;c&amp;amp;&amp;amp;(d=new Image,c=""+a.ue_fpf+g.encodeURIComponent(c)+":"+(+new Date-a.ue_t0),a.ue.iel.push(d),d.src=c):a.ue.log&amp;amp;&amp;amp;(h=g.chrome&amp;amp;&amp;amp;"ul"==b,a.ue.log(c,"uedata",a.ue_svi?{n:1,img:!d&amp;amp;&amp;amp;h?1:0}:{n:1}),a.ue.ielf.push(c));f&amp;amp;&amp;amp;!f.ts&amp;amp;&amp;amp;f.startTimer();a.ue.b&amp;amp;&amp;amp;(f=a.ue.b,a.ue.b="",z(f,b,e,1))}}function m(c){if(!ue.collected){var b=c.timing,e=c.navigation,d=ue.t;b&amp;amp;&amp;amp;(d.na_=b.navigationStart,d.ul_=b.unloadEventStart,d._ul=b.unloadEventEnd,
+d.rd_=b.redirectStart,d._rd=b.redirectEnd,d.fe_=b.fetchStart,d.lk_=b.domainLookupStart,d._lk=b.domainLookupEnd,d.co_=b.connectStart,d._co=b.connectEnd,d.sc_=b.secureConnectionStart,d.rq_=b.requestStart,d.rs_=b.responseStart,d._rs=b.responseEnd,d.dl_=b.domLoading,d.di_=b.domInteractive,d.de_=b.domContentLoadedEventStart,d._de=b.domContentLoadedEventEnd,d._dc=b.domComplete,d.ld_=b.loadEventStart,d._ld=b.loadEventEnd,b=d.na_,c="function"!==typeof c.now||p(b)?0:new Date(b+c.now())-new Date,d.ntd=c+a.ue.t0);
+e&amp;amp;&amp;amp;(d.ty=e.type+a.ue.t0,d.rc=e.redirectCount+a.ue.t0);ue.collected=1}}function s(b){var c=n&amp;amp;&amp;amp;n.navigation?n.navigation.type:y,d=c&amp;amp;&amp;amp;2!=c,e=a.ue.bfini;a.ue.cfa2||(e&amp;amp;&amp;amp;1&amp;lt;e&amp;amp;&amp;amp;(b+="&amp;amp;bfform=1",d||(a.ue.isBFT=e-1)),2==c&amp;amp;&amp;amp;(b+="&amp;amp;bfnt=1",a.ue.isBFT=a.ue.isBFT||1),a.ue.ssw&amp;amp;&amp;amp;a.ue.isBFT&amp;amp;&amp;amp;(p(a.ue.isNRBF)&amp;amp;&amp;amp;(c=a.ue.ssw(a.ue.oid),c.e||p(c.val)||(a.ue.isNRBF=1&amp;lt;c.val?0:1)),p(a.ue.isNRBF)||(b+="&amp;amp;nrbf="+a.ue.isNRBF)),a.ue.isBFT&amp;amp;&amp;amp;!a.ue.isNRBF&amp;amp;&amp;amp;(b+="&amp;amp;bft="+a.ue.isBFT));return b}if(c||p(e)){for(var q in e)e.hasOwnProperty(q)&amp;amp;&amp;amp;
+f(q,c,e[q]);t("pc",c,e);q=f("id",c)||a.ue.id;var b=a.ue.url+"?"+d+"&amp;amp;v="+a.ue.v+"&amp;amp;id="+q,x=f("ctb",c)||f("wb",c),n=g.performance||g.webkitPerformance,k,l;x&amp;amp;&amp;amp;(b+="&amp;amp;ctb="+x);1&amp;lt;a.ueinit&amp;amp;&amp;amp;(b+="&amp;amp;ic="+a.ueinit);!a.ue._fi||"at"!=d||c&amp;amp;&amp;amp;c!=q||(b+=a.ue._fi());if(!("ld"!=d&amp;amp;&amp;amp;"ul"!=d||c&amp;amp;&amp;amp;c!=q)){if("ld"==d){try{g.onbeforeunload&amp;amp;&amp;amp;g.onbeforeunload.isUeh&amp;amp;&amp;amp;(g.onbeforeunload=null)}catch(w){}if(g.chrome)for(l=0;l&amp;lt;ue.ulh.length;l++)B("beforeunload",ue.ulh[l]);(l=document.ue_backdetect)&amp;amp;&amp;amp;l.ue_back&amp;amp;&amp;amp;l.ue_back.value++;a._uess&amp;amp;&amp;amp;
+(k=a._uess());a.ue.isl=1}ue._bf&amp;amp;&amp;amp;(b+="&amp;amp;bf="+ue._bf());a.ue_navtiming&amp;amp;&amp;amp;n&amp;amp;&amp;amp;n.timing&amp;amp;&amp;amp;(f("ctb",q,"1"),1==a.ue_navtiming&amp;amp;&amp;amp;t("tc",y,y,n.timing.navigationStart));n&amp;amp;&amp;amp;m(n);a.ue.t.hob=a.ue_hob;a.ue.t.hoe=a.ue_hoe;a.ue.ifr&amp;amp;&amp;amp;(b+="&amp;amp;ifr=1")}t(d,c,e);e="ld"==d&amp;amp;&amp;amp;c&amp;amp;&amp;amp;f("wb",c);var u;e||q==a.ue.oid||F((f("t",c)||{}).tc||+f("t0",c),+f("t0",c));a.ue_mbl&amp;amp;&amp;amp;a.ue_mbl.cnt&amp;amp;&amp;amp;!e&amp;amp;&amp;amp;(b+=a.ue_mbl.cnt());e?f("wb",c,2):"ld"==d&amp;amp;&amp;amp;(r.lid=v(q));for(u in a.ue.sc)if(1==f("wb",u))break;if(e){if(a.ue.s)return;b=h(b,null)}else l=h(b,null),
+l!=b&amp;amp;&amp;amp;(l=s(l),a.ue.b=l),k&amp;amp;&amp;amp;(b+=k),b=h(b,c||a.ue.id);b=s(b);if(a.ue.b||e)for(u in a.ue.sc)2==f("wb",u)&amp;amp;&amp;amp;delete a.ue.sc[u];k=0;ue._rt&amp;amp;&amp;amp;(b+="&amp;amp;rt="+ue._rt());e||(a.ue.s=0,(k=a.ue_err)&amp;amp;&amp;amp;0&amp;lt;k.ec&amp;amp;&amp;amp;k.pec&amp;lt;k.ec&amp;amp;&amp;amp;(k.pec=k.ec,b+="&amp;amp;ec="+k.ec+"&amp;amp;ecf="+k.ecf),k=f("ctb",c),f("t",c,{}));b&amp;amp;&amp;amp;a.ue.tag&amp;amp;&amp;amp;0&amp;lt;a.ue.tag().length&amp;amp;&amp;amp;(b+="&amp;amp;csmtags="+a.ue.tag().join("|"),a.ue.tag=a.ue.tagC());b&amp;amp;&amp;amp;a.ue.viz&amp;amp;&amp;amp;0&amp;lt;a.ue.viz.length&amp;amp;&amp;amp;(b+="&amp;amp;viz="+a.ue.viz.join("|"),a.ue.viz=[]);b&amp;amp;&amp;amp;!p(a.ue_pty)&amp;amp;&amp;amp;(b+="&amp;amp;pty="+a.ue_pty+"&amp;amp;spty="+a.ue_spty+"&amp;amp;pti="+
+a.ue_pti);b&amp;amp;&amp;amp;a.ue.tabid&amp;amp;&amp;amp;(b+="&amp;amp;tid="+a.ue.tabid);b&amp;amp;&amp;amp;a.ue.aftb&amp;amp;&amp;amp;(b+="&amp;amp;aftb=1");b&amp;amp;&amp;amp;a.ue.sbf&amp;amp;&amp;amp;(b+="&amp;amp;sbf=1");!a.ue._ui||c&amp;amp;&amp;amp;c!=q||(b+=a.ue._ui());a.ue.a=b;z(b,d,k,e)}}function s(a,c,e){e=e||g;e.addEventListener?e.addEventListener(a,c,!!window.ue_clf):e.attachEvent&amp;amp;&amp;amp;e.attachEvent("on"+a,c)}function B(a,c,e){e=e||g;e.removeEventListener?e.removeEventListener(a,c,!!window.ue_clf):e.detachEvent&amp;amp;&amp;amp;e.detachEvent("on"+a,c)}function C(){function d(){a.onUl()}function c(a){return function(){e[a]||(e[a]=1,A(a))}}
+var e=a.ue.r,f,p;a.onLd=c("ld");a.onLdEnd=c("ld");a.onUl=c("ul");f={stop:c("os")};g.chrome?(s("beforeunload",d),ue.ulh.push(d)):f[G]=a.onUl;for(p in f)f.hasOwnProperty(p)&amp;amp;&amp;amp;w(0,g,p,f[p]);a.ue_viz&amp;amp;&amp;amp;ue_viz();s("load",a.onLd);t("ue")}function F(d,c){a.ue_mbl&amp;amp;&amp;amp;a.ue_mbl.ajax&amp;amp;&amp;amp;a.ue_mbl.ajax(d,c);a.ue.tag("ajax-transition")}a.ueinit=(a.ueinit||0)+1;var r={t0:g.aPageStart||a.ue_t0,id:a.ue_id,url:a.ue_url,rid:a.ue_id,a:"",b:"",h:{},r:{ld:0,oe:0,ul:0},s:1,t:{},sc:{},iel:[],ielf:[],fc_idx:{},viz:[],v:"0.1546.0",
+d:a.ue&amp;amp;&amp;amp;a.ue.d,log:a.ue&amp;amp;&amp;amp;a.ue.log,clog:a.ue&amp;amp;&amp;amp;a.ue.clog,onflush:a.ue&amp;amp;&amp;amp;a.ue.onflush,onunload:a.ue&amp;amp;&amp;amp;a.ue.onunload,stub:a.ue&amp;amp;&amp;amp;a.ue.stub,lr:a.ue&amp;amp;&amp;amp;a.ue.lr,exec:a.ue&amp;amp;&amp;amp;a.ue.exec,event:a.ue&amp;amp;&amp;amp;a.ue.event,onSushiUnload:a.ue&amp;amp;&amp;amp;a.ue.onSushiUnload,onSushiFlush:a.ue&amp;amp;&amp;amp;a.ue.onSushiFlush,ulh:[],cfa2:0},E=a.ue_fpf?1:0,G="beforeunload",y;r.oid=v(r.id);r.lid=v(r.id);a.ue=r;a.ue._t0=a.ue.t0;a.ue.tagC=function(){var a={};return function(c){c&amp;amp;&amp;amp;(a[c]=1);c=[];for(var e in a)a.hasOwnProperty(e)&amp;amp;&amp;amp;c.push(e);return c}};a.ue.tag=
+a.ue.tagC();a.ue.ifr=g.top!==g.self||g.frameElement?1:0;ue.attach=s;ue.detach=B;ue.reset=function(d,c){d&amp;amp;&amp;amp;(a.ue_cel&amp;amp;&amp;amp;a.ue_cel.reset(),a.ue.t0=+new Date,a.ue.rid=d,a.ue.id=d,a.ue.fc_idx={},a.ue.viz=[])};a.uei=C;a.ueh=w;a.ues=f;a.uet=t;a.uex=A;C()})(ue_csm,window);
+
+
+ue.stub(ue,"log");ue.stub(ue,"onunload");ue.stub(ue,"onflush");
+(function(b){var a=b.ue;a.cv={};a.cv.scopes={};a.count=function(c,b,d){var e={},f=a.cv;e.counter=c;e.value=b;e.t=a.d();d&amp;amp;&amp;amp;d.scope&amp;amp;&amp;amp;(f=a.cv.scopes[d.scope]=a.cv.scopes[d.scope]||{},e.scope=d.scope);if(void 0===b)return f[c];f[c]=b;c=0;d&amp;amp;&amp;amp;d.bf&amp;amp;&amp;amp;(c=1);a.clog&amp;amp;&amp;amp;0===c?a.clog(e,"csmcount",{bf:c}):a.log&amp;amp;&amp;amp;a.log(e,"csmcount",{c:1,bf:c})};a.count("baselineCounter2",1);a&amp;amp;&amp;amp;a.event&amp;amp;&amp;amp;(a.event({requestId:b.ue_id||"rid",server:b.ue_sn||"sn",obfuscatedMarketplaceId:b.ue_mid||"mid"},"csm","csm.CSMBaselineEvent.4"),
+a.count("nexusBaselineCounter",1,{bf:1}))})(ue_csm);
+
+
+var ue_hoe = +new Date();
+&lt;/script&gt;
+
+&lt;!-- hcd501pjd8c2pg1sg2prenhe1mdeet1x36s5 --&gt;&lt;script&gt;var aPageStart = (new Date()).getTime();&lt;/script&gt;&lt;meta charset="utf-8" /&gt;
+    &lt;title dir="ltr"&gt;Amazon Sign In&lt;/title&gt;
+
+    
+      
+
+      
+        &lt;link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/61gbb09bfIL._RC|11Fd9tJOdtL.css,21ULbzscqzL.css,31Q3id-QR0L.css,31QszevPBSL.css_.css#AUIClients/AmazonUI.min" /&gt;
+&lt;link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AuthenticationPortalAssets-858402f69099c2b6073a58bdde9eb47ca72c6d36._V2_.css#AUIClients/AuthenticationPortalAssets.secure.min" /&gt;
+&lt;link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/CVFAssets-e91ba5c6e67c58c7f9c4c413fa67697feade389e._V2_.css#AUIClients/CVFAssets.secure.min" /&gt;
+&lt;script&gt;
+(function(f,h,I,ka){function u(a,b){r&amp;amp;&amp;amp;r.count&amp;amp;&amp;amp;r.count("aui:"+a,0===b?0:b||(r.count("aui:"+a)||0)+1)}function m(a){try{return a.test(navigator.userAgent)}catch(b){return!1}}function v(a,b,c){a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent&amp;amp;&amp;amp;a.attachEvent("on"+b,c)}function q(a,b,c,e){b=b&amp;amp;&amp;amp;c?b+a+c:b||c;return e?q(a,b,e):b}function A(a,b,c){try{Object.defineProperty(a,b,{value:c,writable:!1})}catch(e){a[b]=c}return c}function J(){return setTimeout(U,0)}function la(a,b){var c=a.length,e=
+c,g=function(){e--||(K.push(b),L||(J(),L=!0))};for(g();c--;)V[a[c]]?g():(w[a[c]]=w[a[c]]||[]).push(g)}function ma(a,b,c,e,g){var d=h.createElement(a?"script":"link");v(d,"error",e);g&amp;amp;&amp;amp;v(d,"load",g);if(a){d.type="text/javascript";d.async=!0;if(a=c)a=-1!==b.indexOf("images/I")||/AUIClients/.test(b);a&amp;amp;&amp;amp;d.setAttribute("crossorigin","anonymous");d.src=b}else d.rel="stylesheet",d.href=b;h.getElementsByTagName("head")[0].appendChild(d)}function W(a,b){return function(c,e){function g(){ma(b,c,d,function(b){M?
+u("resource_unload"):d?(d=!1,u("resource_retry"),g()):(u("resource_error"),a.log("Asset failed to load: "+c));b&amp;amp;&amp;amp;b.stopPropagation?b.stopPropagation():f.event&amp;amp;&amp;amp;(f.event.cancelBubble=!0)},e)}if(X[c])return!1;X[c]=!0;u("resource_count");var d=!0;return!g()}}function na(a,b,c){for(var e={name:a,guard:function(c){return b.guardFatal(a,c)},logError:function(c,d,e){b.logError(c,d,e,a)}},g=[],d=0;d&amp;lt;c.length;d++)B.hasOwnProperty(c[d])&amp;amp;&amp;amp;(g[d]=N.hasOwnProperty(c[d])?N[c[d]](B[c[d]],e):B[c[d]]);return g}function x(a,
+b,c,e,g){return function(d,h){function l(){var a=null;e?a=h:"function"===typeof h&amp;amp;&amp;amp;(p.start=y(),a=h.apply(f,na(d,k,m)),p.end=y());if(b){B[d]=a;a=d;for(V[a]=!0;(w[a]||[]).length;)w[a].shift()();delete w[a]}p.done=!0}var k=g||this;"function"===typeof d&amp;amp;&amp;amp;(h=d,d=void 0);b&amp;amp;&amp;amp;(d=(d||"__NONAME__").replace(/^prv:/,""),O.hasOwnProperty(d)&amp;amp;&amp;amp;k.error(q(", reregistered by ",q(" by ",d+" already registered",O[d]),k.attribution),d),O[d]=k.attribution);for(var m=[],n=0;n&amp;lt;a.length;n++)m[n]=a[n].replace(/^prv:/,"");
+var p=Y[d||"anon"+ ++oa]={depend:m,registered:y(),namespace:k.namespace};c?l():la(m,k.guardFatal(d,l));return{decorate:function(a){N[d]=k.guardFatal(d,a)}}}}function Z(a){return function(){return{execute:x(arguments,!1,a,!1,this),register:x(arguments,!0,a,!1,this)}}}function aa(a){return function(b,c){c||(c=b,b=void 0);var e=this.attribution;return function(){C.push({attribution:e,name:b,logLevel:a});var g=c.apply(this,arguments);C.pop();return g}}}function D(a,b){this.load={js:W(this,!0),css:W(this)};
+A(this,"namespace",b);A(this,"attribution",a)}function ba(){h.body?n.trigger("a-bodyBegin"):setTimeout(ba,20)}function z(a,b){if(b){for(var c=a.className.split(" "),e=c.length;e--;)if(c[e]===b)return;a.className+=" "+b}}function ca(a,b){for(var c=a.className.split(" "),e=[],g;void 0!==(g=c.pop());)g&amp;amp;&amp;amp;g!==b&amp;amp;&amp;amp;e.push(g);a.className=e.join(" ")}function da(a){try{return a()}catch(b){return!1}}function E(){if(F){var a=f.innerWidth?{w:f.innerWidth,h:f.innerHeight}:{w:k.clientWidth,h:k.clientHeight};5&amp;lt;Math.abs(a.w-
+P.w)||50&amp;lt;a.h-P.h?(P=a,Q=4,(a=l.mobile||l.tablet?450&amp;lt;a.w&amp;amp;&amp;amp;a.w&amp;gt;a.h:1250&amp;lt;=a.w)?z(k,"a-ws"):ca(k,"a-ws")):Q--&amp;amp;&amp;amp;(ea=setTimeout(E,16))}}function pa(a){(F=void 0===a?!F:!!a)&amp;amp;&amp;amp;E()}function qa(){return F}"use strict";var G=I.now=I.now||function(){return+new I},y=function(a){return a&amp;amp;&amp;amp;a.now?a.now.bind(a):G}(f.performance);ka=y();var p=f.AmazonUIPageJS||f.P;if(p&amp;amp;&amp;amp;p.when&amp;amp;&amp;amp;p.register)throw Error("A copy of P has already been loaded on this page.");var r=f.ue;r&amp;amp;&amp;amp;r.tag&amp;amp;&amp;amp;(r.tag("aui"),r.tag("aui:aui_build_date:3.17.8.3-2018-02-08"));
+var K=[],L=!1,U;U=function(){for(var a=J(),b=G();K.length;)if(K.shift()(),50&amp;lt;G()-b)return;clearTimeout(a);L=!1};m(/OS 6_[0-9]+ like Mac OS X/i)&amp;amp;&amp;amp;v(f,"scroll",J);var V={},w={},X={},M=!1;v(f,"beforeunload",function(){M=!0;setTimeout(function(){M=!1},1E4)});var O={},B={},N={},Y={},oa=0,R,C=[],fa=f.onerror;f.onerror=function(a,b,c,e,g){g&amp;amp;&amp;amp;"object"===typeof g||(g=Error(a,b,c),g.columnNumber=e,g.stack=b||c||e?q(String.fromCharCode(92),g.message,"at "+q(":",b,c,e)):void 0);var d=C.pop()||{};g.attribution=
+q(":",g.attribution||d.attribution,d.name);g.logLevel=d.logLevel;g.attribution&amp;amp;&amp;amp;console&amp;amp;&amp;amp;console.log&amp;amp;&amp;amp;console.log([g.logLevel||"ERROR",a,"thrown by",g.attribution].join(" "));C=[];fa&amp;amp;&amp;amp;(d=[].slice.call(arguments),d[4]=g,fa.apply(f,d))};D.prototype={logError:function(a,b,c,e){b={message:b,logLevel:c||"ERROR",attribution:q(":",this.attribution,e)};if(f.ueLogError)return f.ueLogError(a||b,a?b:null),!0;console&amp;amp;&amp;amp;console.error&amp;amp;&amp;amp;(console.log(b),console.error(a));return!1},error:function(a,b,c,e){a=Error(q(":",
+e,a,c));a.attribution=q(":",this.attribution,b);throw a;},guardError:aa(),guardFatal:aa("FATAL"),log:function(a,b,c){return this.logError(null,a,b,c)},declare:x([],!0,!0,!0),register:x([],!0),execute:x([]),AUI_BUILD_DATE:"3.17.8.3-2018-02-08",when:Z(),now:Z(!0),trigger:function(a,b,c){var e=G();this.declare(a,{data:b,pageElapsedTime:e-(f.aPageStart||NaN),triggerTime:e});c&amp;amp;&amp;amp;c.instrument&amp;amp;&amp;amp;R.when("prv:a-logTrigger").execute(function(b){b(a)})},handleTriggers:function(){this.log("handleTriggers deprecated")},
+attributeErrors:function(a){return new D(a)},_namespace:function(a,b){return new D(a,b)}};var n=A(f,"AmazonUIPageJS",new D);R=n._namespace("PageJS","AmazonUI");R.declare("prv:p-debug",Y);n.declare("p-recorder-events",[]);n.declare("p-recorder-stop",function(){});A(f,"P",n);ba();if(h.addEventListener){var ga;h.addEventListener("DOMContentLoaded",ga=function(){n.trigger("a-domready");h.removeEventListener("DOMContentLoaded",ga,!1)},!1)}var k=h.documentElement,S=function(){var a=["O","ms","Moz","Webkit"],
+b=h.createElement("div");return{testGradients:function(){b.style.cssText=("background-image:-webkit-gradient(linear,left top,right bottom,from(#9f9),to(white));background-image:"+a.join("linear-gradient(left top,#9f9, white);background-image:")).slice(0,-17);return-1&amp;lt;b.style.backgroundImage.indexOf("gradient")},test:function(c){var e=c.charAt(0).toUpperCase()+c.substr(1);c=(a.join(e+" ")+e+" "+c).split(" ");for(e=c.length;e--;)if(""===b.style[c[e]])return!0;return!1},testTransform3d:function(){var a=
+!1;f.matchMedia&amp;amp;&amp;amp;(a=f.matchMedia("(-webkit-transform-3d)").matches);return a}}}(),p=k.className,ha=/(^| )a-mobile( |$)/.test(p),ia=/(^| )a-tablet( |$)/.test(p),l={audio:function(){return!!h.createElement("audio").canPlayType},video:function(){return!!h.createElement("video").canPlayType},canvas:function(){return!!h.createElement("canvas").getContext},svg:function(){return!!h.createElementNS&amp;amp;&amp;amp;!!h.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect},offline:function(){return navigator.hasOwnProperty&amp;amp;&amp;amp;
+navigator.hasOwnProperty("onLine")&amp;amp;&amp;amp;navigator.onLine},dragDrop:function(){return"draggable"in h.createElement("span")},geolocation:function(){return!!navigator.geolocation},history:function(){return!(!f.history||!f.history.pushState)},webworker:function(){return!!f.Worker},autofocus:function(){return"autofocus"in h.createElement("input")},inputPlaceholder:function(){return"placeholder"in h.createElement("input")},textareaPlaceholder:function(){return"placeholder"in h.createElement("textarea")},localStorage:function(){return"localStorage"in
+f&amp;amp;&amp;amp;null!==f.localStorage},orientation:function(){return"orientation"in f},touch:function(){return"ontouchend"in h},gradients:function(){return S.testGradients()},hires:function(){var a=f.devicePixelRatio&amp;amp;&amp;amp;1.5&amp;lt;=f.devicePixelRatio||f.matchMedia&amp;amp;&amp;amp;f.matchMedia("(min-resolution:144dpi)").matches;u("hiRes"+(ha?"Mobile":ia?"Tablet":"Desktop"),a?1:0);return a},transform3d:function(){return S.testTransform3d()},touchScrolling:function(){return m(/Windowshop|android.([3-9]|[L-Z])|OS ([5-9]|[1-9][0-9]+)(_[0-9]{1,2})+ like Mac OS X|Chrome|Silk|Firefox|Trident.+?; Touch/i)},
+ios:function(){return m(/OS [1-9][0-9]*(_[0-9]*)+ like Mac OS X/i)&amp;amp;&amp;amp;!m(/trident|Edge/i)},android:function(){return m(/android.([1-9]|[L-Z])/i)&amp;amp;&amp;amp;!m(/trident|Edge/i)},mobile:function(){return ha},tablet:function(){return ia}},t;for(t in l)l.hasOwnProperty(t)&amp;amp;&amp;amp;(l[t]=da(l[t]));for(var T="textShadow textStroke boxShadow borderRadius borderImage opacity transform transition".split(" "),H=0;H&amp;lt;T.length;H++)l[T[H]]=da(function(){return S.test(T[H])});var F=!0,ea=0,P={w:0,h:0},Q=4;E();v(f,"resize",function(){clearTimeout(ea);
+Q=4;E()});var ja={getItem:function(a){try{return f.localStorage.getItem(a)}catch(b){}},setItem:function(a,b){try{return f.localStorage.setItem(a,b)}catch(c){}}};ca(k,"a-no-js");z(k,"a-js");!m(/OS [1-8](_[0-9]*)+ like Mac OS X/i)||f.navigator.standalone||m(/safari/i)||z(k,"a-ember");p=[];for(t in l)l.hasOwnProperty(t)&amp;amp;&amp;amp;l[t]&amp;amp;&amp;amp;p.push("a-"+t.replace(/([A-Z])/g,function(a){return"-"+a.toLowerCase()}));z(k,p.join(" "));k.setAttribute("data-aui-build-date","3.17.8.3-2018-02-08");n.register("p-detect",function(){return{capabilities:l,
+localStorage:l.localStorage&amp;amp;&amp;amp;ja,toggleResponsiveGrid:pa,responsiveGridEnabled:qa}});m(/UCBrowser/i)||l.localStorage&amp;amp;&amp;amp;z(k,ja.getItem("a-font-class"));n.declare("a-event-revised-handling",!1);n.declare("a-fix-event-off",!1);u("pagejs:pkgExecTime",y()-NaN)})(window,document,Date);
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/61tHvuwljLL._RC|11IYhapguOL.js,61Z-hR1QEiL.js,31pYyxAZJRL.js,31Qll8kfk9L.js,01N6xzIJxbL.js,516fQ5+zVmL.js,01rpauTep4L.js,31JzIBuTmgL.js,61uDiYnK9wL.js,01BBu+b9t0L.js_.js#AUIClients/AmazonUI.min');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AuthenticationPortalAssets-154332bf91f786a94cb7c4bf543d1e39eb5543b9._V2_.js#AUIClients/AuthenticationPortalAssets.secure.min');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AuthenticationPortalInlineAssets-662783336058590306af126b0eeae5125982f026._V2_.js#AUIClients/AuthenticationPortalInlineAssets.secure.min');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/CVFAssets-ba5a731ec21f81ea39078eccd17584a471ff4474._V2_.js#AUIClients/CVFAssets.secure.min');
+&lt;/script&gt;&lt;script type="text/javascript" async="" crossorigin="anonymous" src="https://images-na.ssl-images-amazon.com/images/I/61tHvuwljLL._RC|11IYhapguOL.js,61Z-hR1QEiL.js,31pYyxAZJRL.js,31Qll8kfk9L.js,01N6xzIJxbL.js,516fQ5+zVmL.js,01rpauTep4L.js,31JzIBuTmgL.js,61uDiYnK9wL.js,01BBu+b9t0L.js_.js#AUIClients/AmazonUI.min"&gt;&lt;/script&gt;&lt;script type="text/javascript" async="" crossorigin="anonymous" src="https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AuthenticationPortalAssets-154332bf91f786a94cb7c4bf543d1e39eb5543b9._V2_.js#AUIClients/AuthenticationPortalAssets.secure.min"&gt;&lt;/script&gt;&lt;script type="text/javascript" async="" crossorigin="anonymous" src="https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AuthenticationPortalInlineAssets-662783336058590306af126b0eeae5125982f026._V2_.js#AUIClients/AuthenticationPortalInlineAssets.secure.min"&gt;&lt;/script&gt;&lt;script type="text/javascript" async="" crossorigin="anonymous" src="https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/CVFAssets-ba5a731ec21f81ea39078eccd17584a471ff4474._V2_.js#AUIClients/CVFAssets.secure.min"&gt;&lt;/script&gt;
+
+      
+    
+  &lt;script type="text/javascript"&gt;
+(function(e,c){function h(b,a){f.push([b,a])}function g(b,a){if(b){var c=e.head||e.getElementsByTagName("head")[0]||e.documentElement,d=e.createElement("script");d.async="async";d.src=b;d.setAttribute("crossorigin","anonymous");a&amp;amp;&amp;amp;a.onerror&amp;amp;&amp;amp;(d.onerror=a.onerror);a&amp;amp;&amp;amp;a.onload&amp;amp;&amp;amp;(d.onload=a.onload);c.insertBefore(d,c.firstChild)}}function k(){ue.uels=g;for(var b=0;b&amp;lt;f.length;b++){var a=f[b];g(a[0],a[1])}ue.deffered=1}var f=[];c.ue&amp;amp;&amp;amp;(ue.uels=h,c.ue.attach&amp;amp;&amp;amp;c.ue.attach("load",k))})(document,window);
+(function(a){var b=a.alert;window.alert=function(){a.ueLogError&amp;amp;&amp;amp;a.ueLogError({message:"[CSM] Alert invocation detected with argument: "+arguments[0],logLevel:"WARN"});Function.prototype.apply.apply(b,[a,arguments||[]])}})(window);
+(function(k,l,g){function m(a){c||(c=b[a.type].id,"undefined"===typeof a.clientX?(e=a.pageX,f=a.pageY):(e=a.clientX,f=a.clientY),2!=c||h&amp;amp;&amp;amp;(h!=e||n!=f)?(r(),d.isl&amp;amp;&amp;amp;l.setTimeout(function(){p("at",d.id)},0)):(h=e,n=f,c=0))}function r(){for(var a in b)b.hasOwnProperty(a)&amp;amp;&amp;amp;d.detach(a,m,b[a].parent)}function s(){for(var a in b)b.hasOwnProperty(a)&amp;amp;&amp;amp;d.attach(a,m,b[a].parent)}function t(){var a="";!q&amp;amp;&amp;amp;c&amp;amp;&amp;amp;(q=1,a+="&amp;amp;ui="+c);return a}var d=k.ue,p=k.uex,q=0,c=0,h,n,e,f,b={click:{id:1,parent:g},mousemove:{id:2,
+parent:g},scroll:{id:3,parent:l},keydown:{id:4,parent:g}};d&amp;amp;&amp;amp;p&amp;amp;&amp;amp;(s(),d._ui=t)})(ue_csm,window,document);
+
+
+
+    if (window.ue &amp;amp;&amp;amp; window.ue.uels) {
+                    ue.uels("https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-69ab801358dfe32338d0619802ae6aabc188b1bd._V2_.js");
+    }
+
+(function(k,c){function l(a,b){return a.filter(function(a){return a.initiatorType==b})}function f(a,c){if(b.t[a]){var g=b.t[a]-b._t0,e=c.filter(function(a){return 0!==a.responseEnd&amp;amp;&amp;amp;m(a)&amp;lt;g}),f=l(e,"script"),h=l(e,"link"),k=l(e,"img"),n=e.map(function(a){return a.name.split("/")[2]}).filter(function(a,b,c){return a&amp;amp;&amp;amp;c.lastIndexOf(a)==b}),q=e.filter(function(a){return a.duration&amp;lt;p}),s=g-Math.max.apply(null,e.map(m))&amp;lt;r|0;"af"==a&amp;amp;&amp;amp;(b._afjs=f.length);return a+":"+[e[d],f[d],h[d],k[d],n[d],q[d],s].join("-")}}
+function m(a){return a.responseEnd-(b._t0-c.timing.navigationStart)}function n(){var a=c[h]("resource"),d=f("cf",a),g=f("af",a),a=f("ld",a);delete b._rt;b._ld=b.t.ld-b._t0;b._art&amp;amp;&amp;amp;b._art();return[d,g,a].join("_")}var p=20,r=50,d="length",b=k.ue,h="getEntriesByType";b._rre=m;b._rt=c&amp;amp;&amp;amp;c.timing&amp;amp;&amp;amp;c[h]&amp;amp;&amp;amp;n})(ue_csm,window.performance);
+
+(function(l,d){function c(b){b="";var c=a.isBFT?"b":"s",d=""+a.oid,f=""+a.lid,g=d;d!=f&amp;amp;&amp;amp;20==f.length&amp;amp;&amp;amp;(c+="a",g+="-"+f);a.tabid&amp;amp;&amp;amp;(b=a.tabid+"+");b+=c+"-"+g;b!=e&amp;amp;&amp;amp;100&amp;gt;b.length&amp;amp;&amp;amp;(e=b,document.cookie="csm-hit="+b+("|"+ +new Date)+m+"; path=/")}function n(){e=0}function h(b){!0===d[a.pageViz.propHid]?e=0:!1===d[a.pageViz.propHid]&amp;amp;&amp;amp;c({type:"visible"})}var m="; expires="+(new Date(+new Date+6048E5)).toGMTString(),e,a=l.ue||{},k=a.pageViz&amp;amp;&amp;amp;a.pageViz.event&amp;amp;&amp;amp;a.pageViz.propHid;a.attach&amp;amp;&amp;amp;(a.attach("click",c),
+a.attach("keyup",c),k||(a.attach("focus",c),a.attach("blur",n)),k&amp;amp;&amp;amp;(a.attach(a.pageViz.event,h,d),h({})));a.aftb=1})(ue_csm,document);
+
+
+ue_csm.ue.stub(ue,"impression");
+
+
+(function(k,d,h){function f(a,c,b){a&amp;amp;&amp;amp;a.indexOf&amp;amp;&amp;amp;0===a.indexOf("http")&amp;amp;&amp;amp;0!==a.indexOf("https")&amp;amp;&amp;amp;l(s,c,a,b)}function g(a,c,b){a&amp;amp;&amp;amp;a.indexOf&amp;amp;&amp;amp;(location.href.split("#")[0]!=a&amp;amp;&amp;amp;null!==a&amp;amp;&amp;amp;"undefined"!==typeof a||l(t,c,a,b))}function l(a,c,b,e){m[b]||(e=u&amp;amp;&amp;amp;e?n(e):"N/A",d.ueLogError&amp;amp;&amp;amp;d.ueLogError({message:a+c+" : "+b,logLevel:v,stack:"N/A"},{attribution:e}),m[b]=1,p++)}function e(a,c){if(a&amp;amp;&amp;amp;c)for(var b=0;b&amp;lt;a.length;b++)try{c(a[b])}catch(d){}}function q(){return d.performance&amp;amp;&amp;amp;d.performance.getEntriesByType?
+d.performance.getEntriesByType("resource"):[]}function n(a){if(a.id)return"//*[@id='"+a.id+"']";var c;c=1;var b;for(b=a.previousSibling;b;b=b.previousSibling)b.nodeName==a.nodeName&amp;amp;&amp;amp;(c+=1);b=a.nodeName;1!=c&amp;amp;&amp;amp;(b+="["+c+"]");a.parentNode&amp;amp;&amp;amp;(b=n(a.parentNode)+"/"+b);return b}function w(){var a=h.images;a&amp;amp;&amp;amp;a.length&amp;amp;&amp;amp;e(a,function(a){var b=a.getAttribute("src");f(b,"img",a);g(b,"img",a)})}function x(){var a=h.scripts;a&amp;amp;&amp;amp;a.length&amp;amp;&amp;amp;e(a,function(a){var b=a.getAttribute("src");f(b,"script",a);g(b,"script",a)})}
+function y(){var a=h.styleSheets;a&amp;amp;&amp;amp;a.length&amp;amp;&amp;amp;e(a,function(a){if(a=a.ownerNode){var b=a.getAttribute("href");f(b,"style",a);g(b,"style",a)}})}function z(){if(A){var a=q();e(a,function(a){f(a.name,a.initiatorType)})}}function B(){e(q(),function(a){g(a.name,a.initiatorType)})}function r(){var a;a=d.location&amp;amp;&amp;amp;d.location.protocol?d.location.protocol:void 0;"https:"==a&amp;amp;&amp;amp;(z(),w(),x(),y(),B(),p&amp;lt;C&amp;amp;&amp;amp;setTimeout(r,D))}var s="[CSM] Insecure content detected ",t="[CSM] Ajax request to same page detected ",v="WARN",
+m={},p=0,D=k.ue_nsip||1E3,C=5,A=1==k.ue_urt,u=!0;ue_csm.ue_disableNonSecure||(d.performance&amp;amp;&amp;amp;d.performance.setResourceTimingBufferSize&amp;amp;&amp;amp;d.performance.setResourceTimingBufferSize(300),r())})(ue_csm,window,document);
+
+
+if(window.ue&amp;amp;&amp;amp;uet) { uet('bb'); }
+&lt;/script&gt;&lt;script type="text/javascript" async="" src="https://images-na.ssl-images-amazon.com/images/G/01/advertising/dev/js/live/adSnippet._CB142890782_.js" crossorigin="anonymous"&gt;&lt;/script&gt;&lt;/head&gt;
+
+  &lt;body class="ap-locale-en_US a-m-us a-aui_51744-c a-aui_57326-c a-aui_72554-c a-aui_83815-c a-aui_86171-c a-aui_96511-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_noopener_84118-c a-aui_ux_102912-c a-aui_ux_59374-c a-aui_ux_60000-c a-aui_ux_92006-c a-aui_ux_98513-c a-dex_92889-c a-meter-animate"&gt;
+
+&lt;script type="text/javascript"&gt;
+
+(function(){function l(a){for(var c=b.location.search.substring(1).split("&amp;amp;"),e=0;e&amp;lt;c.length;e++){var d=c[e].split("=");if(d[0]===a)return d[1]}}window.amzn=window.amzn||{};amzn.copilot=amzn.copilot||{};var b=window,f=document,g=b.P||b.AmazonUIPageJS,h=f.head||f.getElementsByTagName("head")[0],m=0,n=0;amzn.copilot.checkCoPilotSession=function(){f.cookie.match("cpidv")&amp;amp;&amp;amp;("undefined"!==typeof jQuery&amp;amp;&amp;amp;k(jQuery),g&amp;amp;&amp;amp;g.when&amp;amp;&amp;amp;g.when("jQuery").execute(function(a){k(a)}),b.amznJQ&amp;amp;&amp;amp;b.amznJQ.available&amp;amp;&amp;amp;b.amznJQ.available("jQuery",
+function(){k(jQuery)}),b.jQuery||g||b.amznJQ||q())};var q=function(){m?b.ue&amp;amp;&amp;amp;"function"===typeof b.ue.count&amp;amp;&amp;amp;b.ue.count("cpJQUnavailable",1):(m=1,f.addEventListener?f.addEventListener("DOMContentLoaded",amzn.copilot.checkCoPilotSession,!1):f.attachEvent&amp;amp;&amp;amp;f.attachEvent("onreadystatechange",function(){"complete"===f.readyState&amp;amp;&amp;amp;amzn.copilot.checkCoPilotSession()}))},k=function(a){if(!n){n=1;amzn.copilot.jQuery=a;a=l("debugJS");var c="https:"===b.location.protocol?1:0,e=1;url="/gp/copilot/handlers/copilot_strings_resources.html";
+window.texas&amp;amp;&amp;amp;texas.locations&amp;amp;&amp;amp;(url=texas.locations.makeUrl(url));g&amp;amp;&amp;amp;g.AUI_BUILD_DATE&amp;amp;&amp;amp;(e=0);amzn.copilot.jQuery.ajax&amp;amp;&amp;amp;amzn.copilot.jQuery.ajax({url:url,dataType:"json",data:{isDebug:a,isSecure:c,includeAUIP:e},success:function(a){amzn.copilot.vip=a.serviceEndPoint;amzn.copilot.enableMultipleTabSession=a.isFollowMe;r(a)},error:function(){b.ue.count("cpLoadResourceError",1)}})}},r=function(a){var c=amzn.copilot.jQuery,e=function(){amzn.copilot.setup(c.extend({isContinuedSession:!0},a))};a.CSSUrls&amp;amp;&amp;amp;
+c.each(a.CSSUrls[0],function(a,c){var b=f.createElement("link");b.type="text/css";b.rel="stylesheet";b.href=c;h.appendChild(b)});a.CSSTag&amp;amp;&amp;amp;s(a.CSSTag);if(a.JSUrls){var d=l("forceSynchronousJS"),b=a.JSUrls[0];c.each(b,function(a,c){a===b.length-1?p(c,d,e):p(c,d)})}a.JSTag&amp;amp;&amp;amp;(t(a.JSTag),P.when("CSCoPilotPresenterAsset").execute(function(){e()}))},t=function(a){var c=f.createElement("div");c.innerHTML=a;a=0;for(var b=c.children.length;a&amp;lt;b;a++){var d=f.createElement("script");d.type="text/javascript";
+d.innerHTML=c.children[a].innerHTML;h.appendChild(d)}},s=function(a){var b=f.createElement("div");b.innerHTML=a;a=0;for(var e=b.children.length;a&amp;lt;e;a++)h.appendChild(b.children[a])},p=function(a,b,e){var d=f.createElement("script");d.type="text/javascript";d.src=a;d.async=b?!1:!0;e&amp;amp;&amp;amp;(d.onload=e);h.appendChild(d)}})();
+
+amzn.copilot.checkCoPilotSession();
+
+&lt;/script&gt;
+&lt;div id="a-page"&gt;&lt;script type="a-state" data-a-state="{&amp;quot;key&amp;quot;:&amp;quot;a-wlab-states&amp;quot;}"&gt;{"AUI_51744":null,"AUI_57326":null,"AUI_72554":null,"AUI_83815":null,"AUI_86171":null,"AUI_96511":null,"AUI_ACCESSIBILITY_49860":null,"AUI_ATTR_VALIDATIONS_1_51371":null,"AUI_BOLT_62845":null,"AUI_NOOPENER_84118":null,"AUI_UX_102912":null,"AUI_UX_59374":null,"AUI_UX_60000":null,"AUI_UX_92006":"C","AUI_UX_98513":null,"DEX_92889":null}&lt;/script&gt;
+    &lt;div class="a-section a-padding-medium auth-workflow"&gt;
+      &lt;div class="a-section a-spacing-none auth-navbar"&gt;
+        
+
+
+
+
+
+&lt;div class="a-section a-spacing-medium a-text-center"&gt;
+  
+    
+
+    
+      
+
+
+&lt;a class="a-link-nav-icon" tabindex="-1" href="/ref=ap_frn_logo"&gt;
+  
+  &lt;i class="a-icon a-icon-logo" aria-label="Amazon"&gt;&lt;span class="a-icon-alt"&gt;Amazon&lt;/span&gt;&lt;/i&gt;
+
+  
+  
+&lt;/a&gt;
+
+    
+  
+&lt;/div&gt;
+
+
+      &lt;/div&gt;
+
+      &lt;div id="authportal-center-section" class="a-section"&gt;
+        
+          
+          
+            &lt;div id="authportal-main-section" class="a-section"&gt;
+              
+
+
+
+
+
+&lt;div class="a-section a-spacing-base auth-pagelet-container"&gt;
+  
+    
+    
+      &lt;div id="auth-cookie-warning-message" class="a-box a-alert a-alert-warning"&gt;&lt;div class="a-box-inner a-alert-container"&gt;&lt;h4 class="a-alert-heading"&gt;Please Enable Cookies to Continue&lt;/h4&gt;&lt;i class="a-icon a-icon-alert"&gt;&lt;/i&gt;&lt;div class="a-alert-content"&gt;
+        &lt;p&gt;
+          &lt;a class="a-link-normal" href="/gp/help/customer/display.html/ref=ap_cookie_error_help?"&gt;
+            
+          &lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    
+  
+&lt;/div&gt;
+
+&lt;div class="a-section auth-pagelet-container"&gt;
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain --&gt;
+
+
+&lt;!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain --&gt;
+
+
+&lt;!-- show a warning modal dialog when the third party account is connected with Amazon --&gt;
+
+
+
+  
+    
+
+
+
+
+
+&lt;div class="a-section a-spacing-base"&gt;
+  &lt;div class="a-section"&gt;
+    
+    &lt;form name="signIn" method="post" novalidate="" action="https://www.amazon.com/ap/signin" class="auth-validate-form auth-real-time-validation a-spacing-none fwcim-form" data-fwcim-id="undefined9ea61d1e"&gt;
+      &lt;input type="hidden" name="appActionToken" value="k2HidVkO5gy80ANufCDxSnRSj2F00j3D" /&gt;&lt;input type="hidden" name="appAction" value="SIGNIN_PWD_COLLECT" /&gt;
+
+      
+
+
+
+
+
+  
+    &lt;input type="hidden" name="showRmrMe" value="ape:MA==" /&gt;
+  
+    &lt;input type="hidden" name="openid.pape.max_auth_age" value="ape:MA==" /&gt;
+  
+    &lt;input type="hidden" name="openid.identity" value="ape:aHR0cDovL3NwZWNzLm9wZW5pZC5uZXQvYXV0aC8yLjAvaWRlbnRpZmllcl9zZWxlY3Q=" /&gt;
+  
+    &lt;input type="hidden" name="siteState" value="isRegularCheckout.1|IMBMsgs.|isRedirect.0|hasWorkingJavascript.1" /&gt;
+  
+    &lt;input type="hidden" name="pageId" value="ape:YW1hem9uX2NoZWNrb3V0X3Vz" /&gt;
+  
+    &lt;input type="hidden" name="openid.return_to" value="ape:aHR0cHM6Ly93d3cuYW1hem9uLmNvbS9ncC9idXkvc2lnbmluL2hhbmRsZXJzL2NvbnRpbnVlLmh0bWw/aWU9VVRGOCZjYXJ0SXRlbUlkcz0mZUdDQXBwPSZoYXNXb3JraW5nSmF2YXNjcmlwdD0wJmlzRUdDT3JkZXI9MCZpc0ZyZXNoPTAmb2xkQ3VzdG9tZXJJZD0mb2xkUHVyY2hhc2VJZD0mcHJlSW5pdGlhdGVDdXN0b21lcklkPSZwdXJjaGFzZUluUHJvZ3Jlc3M9JnNpdGVEZXNpZ249" /&gt;
+  
+    &lt;input type="hidden" name="prevRID" value="ape:V1NFRzZSQlpOUVNUTURKVlBTS0Q=" /&gt;
+  
+    &lt;input type="hidden" name="openid.assoc_handle" value="ape:YW1hem9uX2NoZWNrb3V0X3Vz" /&gt;
+  
+    &lt;input type="hidden" name="openid.mode" value="ape:Y2hlY2tpZF9zZXR1cA==" /&gt;
+  
+    &lt;input type="hidden" name="openid.ns.pape" value="ape:aHR0cDovL3NwZWNzLm9wZW5pZC5uZXQvZXh0ZW5zaW9ucy9wYXBlLzEuMA==" /&gt;
+  
+    &lt;input type="hidden" name="prepopulatedLoginId" /&gt;
+  
+    &lt;input type="hidden" name="failedSignInCount" value="ape:MA==" /&gt;
+  
+    &lt;input type="hidden" name="openid.claimed_id" value="ape:aHR0cDovL3NwZWNzLm9wZW5pZC5uZXQvYXV0aC8yLjAvaWRlbnRpZmllcl9zZWxlY3Q=" /&gt;
+  
+    &lt;input type="hidden" name="openid.ns" value="ape:aHR0cDovL3NwZWNzLm9wZW5pZC5uZXQvYXV0aC8yLjA=" /&gt;
+  
+
+
+
+      &lt;div class="a-section"&gt;
+        &lt;div class="a-box"&gt;&lt;div class="a-box-inner a-padding-extra-large"&gt;
+          &lt;h1 class="a-spacing-small"&gt;
+            Sign in
+          &lt;/h1&gt;
+          &lt;!-- optional subheading element --&gt;
+          
+          &lt;div class="a-row a-spacing-base"&gt;
+            &lt;label for="ap_email" class="a-form-label"&gt;
+              Email (phone for mobile accounts)
+            &lt;/label&gt;
+            
+            
+              
+                
+              
+              
+            
+            &lt;input type="email" maxlength="128" id="ap_email" name="email" tabindex="1" class="a-input-text a-span12 auth-autofocus auth-required-field" /&gt;
+            
+            &lt;input type="password" id="ap-credential-autofill-hint" name="password" class="a-input-text hide" /&gt;
+            
+
+
+
+&lt;div id="auth-email-missing-alert" class="a-box a-alert-inline a-alert-inline-error auth-inlined-error-message a-spacing-none a-spacing-top-mini"&gt;&lt;div class="a-box-inner a-alert-container"&gt;&lt;i class="a-icon a-icon-alert"&gt;&lt;/i&gt;&lt;div class="a-alert-content"&gt;
+  Enter your email or mobile phone number
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+          &lt;/div&gt;
+
+          
+          &lt;input type="hidden" name="create" value="0" /&gt;
+
+          &lt;div class="a-section"&gt;
+            
+            
+
+
+
+
+
+
+
+
+
+            
+            &lt;span id="continue" class="a-button a-button-span12 a-button-primary"&gt;&lt;span class="a-button-inner"&gt;&lt;input id="continue" tabindex="5" class="a-button-input" type="submit" aria-labelledby="continue-announce" /&gt;&lt;span id="continue-announce" class="a-button-text" aria-hidden="true"&gt;
+              Continue
+            &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+
+            
+&lt;script&gt;
+  function cf() {
+    if (typeof window.uet === 'function') {
+      uet('cf');
+    }
+    if (window.embedNotification &amp;amp;&amp;amp;
+      typeof window.embedNotification.onCF === 'function') {
+      embedNotification.onCF();
+    }
+  }
+&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;cf()&lt;/script&gt;
+
+          &lt;/div&gt;
+
+          
+
+          
+
+          
+
+
+&lt;div class="a-section"&gt;
+  &lt;div aria-live="polite" class="a-row a-expander-container a-expander-inline-container"&gt;
+    &lt;a href="javascript:void(0)" data-action="a-expander-toggle" class="a-expander-header a-declarative a-expander-inline-header a-link-expander" data-a-expander-toggle="{&amp;quot;allowLinkDefault&amp;quot;:true, &amp;quot;expand_prompt&amp;quot;:&amp;quot;&amp;quot;, &amp;quot;collapse_prompt&amp;quot;:&amp;quot;&amp;quot;}"&gt;&lt;i class="a-icon a-icon-expand"&gt;&lt;/i&gt;&lt;span class="a-expander-prompt"&gt;
+      Need help?
+    &lt;/span&gt;&lt;/a&gt;
+    &lt;div aria-expanded="false" class="a-expander-content a-expander-inline-content a-expander-inner" style="display:none"&gt;
+      
+
+
+
+  
+  
+  
+    
+  
+
+&lt;a id="auth-fpp-link-bottom" class="a-link-normal" href="https://www.amazon.com/ap/forgotpassword?showRmrMe=0&amp;amp;openid.pape.max_auth_age=0&amp;amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;amp;siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0&amp;amp;pageId=amazon_checkout_us&amp;amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26siteDesign%3D&amp;amp;prevRID=WSEG6RBZNQSTMDJVPSKD&amp;amp;openid.assoc_handle=amazon_checkout_us&amp;amp;openid.mode=checkid_setup&amp;amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;amp;prepopulatedLoginId=&amp;amp;failedSignInCount=0&amp;amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"&gt;
+  Forgot your password?
+&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div aria-expanded="false" class="a-expander-content a-expander-inline-content a-expander-inner" style="display:none"&gt;
+      &lt;a id="ap-other-signin-issues-link" class="a-link-normal" href="/gp/help/customer/account-issues/ref=ap_login_with_otp_claim_collection?ie=UTF8"&gt;
+        Other issues with sign in
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+          
+
+
+
+
+  
+  
+  
+    
+      
+      
+      
+        
+        
+      
+    
+  
+
+
+          
+          
+        &lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+  
+    
+    
+      
+        
+        &lt;div class="a-divider a-divider-break"&gt;&lt;h5&gt;New to Amazon?&lt;/h5&gt;&lt;/div&gt;
+        &lt;span id="auth-create-account-link" class="a-button a-button-span12"&gt;&lt;span class="a-button-inner"&gt;&lt;a id="createAccountSubmit" tabindex="6" href="https://www.amazon.com/ap/register?showRmrMe=0&amp;amp;openid.pape.max_auth_age=0&amp;amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;amp;siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0&amp;amp;pageId=amazon_checkout_us&amp;amp;openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26siteDesign%3D&amp;amp;prevRID=WSEG6RBZNQSTMDJVPSKD&amp;amp;openid.assoc_handle=amazon_checkout_us&amp;amp;openid.mode=checkid_setup&amp;amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;amp;prepopulatedLoginId=&amp;amp;failedSignInCount=0&amp;amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" class="a-button-text" role="button"&gt;
+          Create your Amazon account
+        &lt;/a&gt;&lt;/span&gt;&lt;/span&gt;
+      
+    
+  
+&lt;/div&gt;
+
+  
+  
+
+&lt;/div&gt;
+            &lt;/div&gt;
+          
+        
+      &lt;/div&gt;
+
+      
+      &lt;div id="right-2"&gt;
+      &lt;/div&gt;
+
+      &lt;div class="a-section a-spacing-top-extra-large auth-footer"&gt;
+        
+
+
+
+&lt;div class="a-divider a-divider-section"&gt;&lt;div class="a-divider-inner"&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="a-section a-spacing-small a-text-center a-size-mini"&gt;
+  &lt;span class="auth-footer-seperator"&gt;&lt;/span&gt;
+
+  
+    
+      
+        
+      
+
+      
+    
+
+    &lt;a class="a-link-normal" target="_blank" rel="noopener noreferrer" href="/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&amp;amp;nodeId=508088"&gt;
+      Conditions of Use
+    &lt;/a&gt;
+    &lt;span class="auth-footer-seperator"&gt;&lt;/span&gt;
+  
+    
+      
+        
+      
+
+      
+    
+
+    &lt;a class="a-link-normal" target="_blank" rel="noopener noreferrer" href="/gp/help/customer/display.html/ref=ap_desktop_footer_privacy_notice?ie=UTF8&amp;amp;nodeId=468496"&gt;
+      Privacy Notice
+    &lt;/a&gt;
+    &lt;span class="auth-footer-seperator"&gt;&lt;/span&gt;
+  
+    
+      
+        
+      
+
+      
+    
+
+    &lt;a class="a-link-normal" target="_blank" rel="noopener noreferrer" href="/help"&gt;
+      Help
+    &lt;/a&gt;
+    &lt;span class="auth-footer-seperator"&gt;&lt;/span&gt;
+  
+
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class="a-section a-spacing-none a-text-center"&gt;
+  
+
+
+
+
+
+&lt;span class="a-size-mini a-color-secondary"&gt;
+  © 1996-2018, Amazon.com, Inc. or its affiliates
+&lt;/span&gt;
+
+&lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id="auth-external-javascript" class="auth-external-javascript" data-external-javascripts="[&amp;quot;https://images-na.ssl-images-amazon.com/images/G/01/advertising/dev/js/live/adSnippet._CB142890782_.js&amp;quot;]"&gt;
+    &lt;/div&gt;
+
+    
+
+
+
+
+&lt;script id="fwcim-script" crossorigin="anonymous" type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/common/login/fwcim._CB500379164_.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+if (typeof fwcim != "undefined") {
+
+fwcim.useMercury('https://images-na.ssl-images-amazon.com/images/G/01/x-locale/common/login/mercury9._CB372126632_.swf')
+
+
+
+fwcim.profile('signIn');
+
+
+}
+&lt;/script&gt;
+
+
+    
+    &lt;!-- cache slot rendered --&gt;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+    
+    
+    
+    
+  
+  
+    
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;script type="text/javascript"&gt;
+// send a AJAX call to store the pipedata, retrying after 60 seconds for a max of 5 times
+var functionWrap = function (jQuery) {
+    var retrypipedata = 5;
+    var pipedataattempts = 1;
+    var emailchanged = 0;
+    var storepipedatahandler;
+    var emailchangeattempts = 5;
+
+    function storepipedata() {
+        var hframe = jQuery('&amp;lt;iframe src="/gp/buy/prefetch/store-html.html" style="width:0px; height:0px; display:none"&amp;gt;&amp;lt;/iframe&amp;gt;');
+        jQuery('body').append(hframe);
+
+        pipedataattempts++;
+        if (pipedataattempts &amp;lt; retrypipedata) {
+            storepipedatahandler = setTimeout(storepipedata, 60000);
+        }
+    }
+
+    jQuery(window).ready(function() {
+        if (!emailchanged) {
+            storepipedatahandler = setTimeout(storepipedata, 60000);
+        }
+    });
+
+    jQuery(document).ready(function() {
+        jQuery('#ap_email').change(function() {
+            if ((emailchanged &amp;lt; emailchangeattempts) &amp;amp;&amp;amp; jQuery('#ap_email').val()) {
+                jQuery.ajax({url: "/gp/checkoutprefetch/change-email.html", data: {email: jQuery('#ap_email').val()}, headers: {"Cache-Control":"no-cache", "pragma":"no-cache"}});
+                if (storepipedatahandler) {
+                    clearTimeout(storepipedatahandler);
+                }
+                emailchanged++;
+            }
+        });
+    });
+};
+
+if (typeof window.P === "object" &amp;amp;&amp;amp; typeof window.P.when === "function") {
+    P.when('jQuery').execute(function($) {
+        functionWrap($);
+    });
+} else if (typeof window.amznJQ === "object") {
+    amznJQ.onReady('jQuery', function() {
+        functionWrap(jQuery);
+    });
+} else if (typeof window.jQuery === "function") {
+    functionWrap(jQuery);
+} else {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    (document.getElementsByTagName("head")[0]).appendChild(script);
+    script.onload = function() {
+        script.onload = null;
+        functionWrap(window.$);
+        if (window.verifyJavascript !== undefined) {
+            $(window).ready(function() {
+                // verify JS and trigger prefeth
+                verifyJavascript.makePrefetch($);
+                // verify javascript
+                setTimeout('verifyJavascript.updateSiteState($, false)', 100);
+            });
+        }
+    };
+    script.src = "https://images-na.ssl-images-amazon.com/images/G/01/orderApplication/aui/jquery-164-20131028._CB511593317_.js";
+        script.crossOrigin="anonymous";
+}
+&lt;/script&gt;
+
+
+
+
+
+
+
+&lt;img src="/gp/checkoutonebyone/pagetype-checkout.html" style="display:none" /&gt;
+
+
+
+&lt;div id="checkout-siteState" style="display: none;"&gt;
+  isRegularCheckout.1|IMBMsgs.|isRedirect.0
+&lt;/div&gt;
+
+
+
+
+
+&lt;noscript&gt;
+&amp;lt;iframe src="/gp/remotepagelet/signin/checkout-perf-initiate-and-store.html?ie=UTF8&amp;amp;siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0&amp;amp;hasWorkingJavascript=0" style="width:0px; height:0px; display:none"&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/noscript&gt;
+
+&lt;iframe id="checkout-pref-init-and-store" src="/gp/remotepagelet/signin/checkout-perf-initiate-and-store.html?ie=UTF8&amp;amp;siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0&amp;amp;hasWorkingJavascript=1" style="width:0px; height:0px; display:none"&gt;&lt;/iframe&gt;
+
+&lt;script type="text/javascript"&gt;
+// verify if javascript is enabled, append a hidden input to the signin form if it's enabled
+var verifyJavascript = {
+    hasWorkingJavascript: function(jQuery) {
+        var hasWorkingJS = 1;
+        if (jQuery.browser.msie){
+            try {
+                var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+            } catch(e) {
+                hasWorkingJS = 0;
+            }
+        }
+        return hasWorkingJS;
+    },
+    makePrefetch: function(jQuery) {
+        var hasWorkingJS = this.hasWorkingJavascript(jQuery);
+        jQuery("#checkout-pref-init-and-store").attr("src", "/gp/remotepagelet/signin/checkout-perf-initiate-and-store.html?ie=UTF8&amp;amp;siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0&amp;amp;hasWorkingJavascript="+hasWorkingJS);
+    },
+    updateSiteState: function(jQuery, isAUIEnabledPage) {
+        if (!this.hasWorkingJavascript(jQuery)) {
+            return;
+        }
+        
+        var $form;
+        if (isAUIEnabledPage) {
+            $form = jQuery("form[name='signIn']");
+        } else {
+            $form = jQuery("#ap_signin_form");
+        }
+        if (!$form.length) {
+            return;
+        }
+        
+        var formValue = jQuery.trim(jQuery("#checkout-siteState").text()) + "|hasWorkingJavascript.1";
+        var $siteState = $form.find("input[name='siteState']");
+        if ($siteState.length) {
+            $siteState.attr("value", formValue);
+        } else {
+            var formData = '&amp;lt;input type="hidden" name="siteState" value="' + formValue + '" /&amp;gt;';
+            $form.append(formData);
+        }
+    }
+};
+
+// we are testing for the presence of window.P to determine if the page is AUI enabled as on AUI pages P should always be available.
+if (window.P !== undefined) {
+    P.when('A', 'ready').execute(function(A) {
+       var $ = A.$;
+       // verify JS and trigger prefeth
+       verifyJavascript.makePrefetch($);
+       //verify javascript
+       setTimeout(function(){
+           verifyJavascript.updateSiteState($, true);
+       }, 100);
+    });
+} else if (window.jQuery !== undefined) {
+    jQuery(window).ready(function() {
+        // verify JS and trigger prefeth
+        verifyJavascript.makePrefetch(jQuery);
+        // verify javascript
+        setTimeout('verifyJavascript.updateSiteState(jQuery, false)'
+        , 100);
+    });
+}
+&lt;/script&gt;
+  &lt;/div&gt;&lt;div id="be" style="display:none;visibility:hidden;"&gt;&lt;form name="ue_backdetect" action="get"&gt;&lt;input type="hidden" name="ue_back" value="2" /&gt;&lt;/form&gt;
+
+
+    &lt;script type="text/javascript"&gt;
+var ue_mbl=ue_csm.ue.exec(function(e,a){function k(f){b=f||{};a.AMZNPerformance=b;b.transition=b.transition||{};b.timing=b.timing||{};e.ue.exec(l,"csm-android-check")()&amp;amp;&amp;amp;b.tags instanceof Array&amp;amp;&amp;amp;(f=-1!=b.tags.indexOf("usesAppStartTime")||b.transition.type?!b.transition.type&amp;amp;&amp;amp;-1&amp;lt;b.tags.indexOf("usesAppStartTime")?"warm-start":void 0:"view-transition",f&amp;amp;&amp;amp;(b.transition.type=f));"reload"===d._nt&amp;amp;&amp;amp;e.ue_orct||"intrapage-transition"===d._nt?a.performance&amp;amp;&amp;amp;performance.timing&amp;amp;&amp;amp;performance.timing.navigationStart?
+b.timing.transitionStart=a.performance.timing.navigationStart:delete b.timing.transitionStart:"undefined"===typeof d._nt&amp;amp;&amp;amp;a.performance&amp;amp;&amp;amp;performance.timing&amp;amp;&amp;amp;performance.timing.navigationStart&amp;amp;&amp;amp;a.history&amp;amp;&amp;amp;"function"===typeof a.History&amp;amp;&amp;amp;"object"===typeof a.history&amp;amp;&amp;amp;history.length&amp;amp;&amp;amp;1!=history.length&amp;amp;&amp;amp;(b.timing.transitionStart=a.performance.timing.navigationStart);f=b.transition;var c;c=d._nt?d._nt:void 0;f.subType=c;a.ue&amp;amp;&amp;amp;a.ue.tag&amp;amp;&amp;amp;a.ue.tag("has-AMZNPerformance");d.isl&amp;amp;&amp;amp;a.uex&amp;amp;&amp;amp;uex("at","csm-timing");
+m()}function n(b){a.ue&amp;amp;&amp;amp;a.ue.count&amp;amp;&amp;amp;a.ue.count("csm-cordova-plugin-failed",1)}function l(){return a.webclient&amp;amp;&amp;amp;"function"===typeof a.webclient.getRealClickTime?a.cordova&amp;amp;&amp;amp;a.cordova.platformId&amp;amp;&amp;amp;"ios"==a.cordova.platformId?!1:!0:!1}function m(){try{P.register("AMZNPerformance",function(){return b})}catch(a){}}function g(){if(!b)return"";ue_mbl.cnt=null;var a=b.transition,c;c=b.timing.transitionStart;c="undefined"!==typeof c&amp;amp;&amp;amp;"undefined"!==typeof h?c-h:void 0;a=["mts",c,"mtt",a.type,"mtst",a.subType,
+"mtlt",a.launchType];c="";for(var d=0;d&amp;lt;a.length;d+=2){var e=a[d],g=a[d+1];"undefined"!==typeof g&amp;amp;&amp;amp;(c+="&amp;amp;"+e+"="+g)}return c}function p(a,c){b&amp;amp;&amp;amp;(h=c,b.timing.transitionStart=a,b.transition.type="view-transition",b.transition.subType="ajax-transition",b.transition.launchType="normal",ue_mbl.cnt=g)}var d=e.ue||{},h=e.ue_t0,b;if(a.P&amp;amp;&amp;amp;a.P.when&amp;amp;&amp;amp;a.P.register)return a.P.when("CSMPlugin").execute(function(a){a.buildAMZNPerformance&amp;amp;&amp;amp;a.buildAMZNPerformance({successCallback:k,failCallback:n})}),{cnt:g,ajax:p}},
+"mobile-timing")(ue_csm,window);
+
+(function(d){d._uess=function(){var a="";screen&amp;amp;&amp;amp;screen.width&amp;amp;&amp;amp;screen.height&amp;amp;&amp;amp;(a+="&amp;amp;sw="+screen.width+"&amp;amp;sh="+screen.height);var b=function(a){var b=document.documentElement["client"+a];return"CSS1Compat"===document.compatMode&amp;amp;&amp;amp;b||document.body["client"+a]||b},c=b("Width"),b=b("Height");c&amp;amp;&amp;amp;b&amp;amp;&amp;amp;(a+="&amp;amp;vw="+c+"&amp;amp;vh="+b);return a}})(ue_csm);
+
+(function(a){var b=document.ue_backdetect;b&amp;amp;&amp;amp;b.ue_back&amp;amp;&amp;amp;a.ue&amp;amp;&amp;amp;(a.ue.bfini=b.ue_back.value);a.uet&amp;amp;&amp;amp;a.uet("be");a.onLdEnd&amp;amp;&amp;amp;(window.addEventListener?window.addEventListener("load",a.onLdEnd,!1):window.attachEvent&amp;amp;&amp;amp;window.attachEvent("onload",a.onLdEnd));a.ueh&amp;amp;&amp;amp;a.ueh(0,window,"load",a.onLd,1);a.ue&amp;amp;&amp;amp;a.ue.tag&amp;amp;&amp;amp;(a.ue_furl&amp;amp;&amp;amp;a.ue_furl.split?(b=a.ue_furl.split("."))&amp;amp;&amp;amp;b[0]&amp;amp;&amp;amp;a.ue.tag(b[0]):a.ue.tag("nofls"))})(ue_csm);
+(function(g,h){function d(a,d){var b={};if(!e||!f)try{var c=h.sessionStorage;c?a&amp;amp;&amp;amp;("undefined"!==typeof d?c.setItem(a,d):b.val=c.getItem(a)):f=1}catch(g){e=1}e&amp;amp;&amp;amp;(b.e=1);return b}var b=g.ue||{},a="",f,e,c,a=d("csmtid");f?a="NA":a.e?a="ET":(a=a.val,a||(a=b.oid||"NI",d("csmtid",a)),c=d(b.oid),c.e||(c.val=c.val||0,d(b.oid,c.val+1)),b.ssw=d);b.tabid=a})(ue_csm,window);
+ue_csm.ue.exec(function(e,f){var a=e.ue||{},b=a._wlo,d;if(a.ssw){d=a.ssw("CSM_previousURL").val;var c=f.location,b=b?b:c&amp;amp;&amp;amp;c.href?c.href.split("#")[0]:void 0;c=(b||"")===a.ssw("CSM_previousURL").val;!c&amp;amp;&amp;amp;b&amp;amp;&amp;amp;a.ssw("CSM_previousURL",b);d=c?"reload":d?"intrapage-transition":"first-view"}else d="unknown";a._nt=d},"NavTypeModule")(ue_csm,window);
+
+
+(function(b,c){var a=c.images;a&amp;amp;&amp;amp;a.length&amp;amp;&amp;amp;b.ue.count("totalImages",a.length)})(ue_csm,document);
+
+
+ue_csm.ue._rtn = 1;
+(function(e,f){function h(a){a=a.split("?")[0]||a;a=a.replace("http://","").replace("https://","").replace("resource://","").replace("res://","").replace("undefined://","").replace("chrome://","").replace(/\*/g,"").replace(/!/g,"").replace(/~/g,"");var b=a.split("/");a=a.substr(a.lastIndexOf("/")+1);b.splice(-1);b=b.map(function(a){c[a]||(c[a]=(k++).toString(36));return c[a]});b.push(a);return b.join("!")}function l(){return f.getEntriesByType("resource").filter(function(a){return d._rre(a)&amp;lt;d._ld}).sort(function(a,
+b){return a.responseEnd-b.responseEnd}).splice(0,m).map(function(a){var b=[],c;for(c in a)g[c]&amp;amp;&amp;amp;a[c]&amp;amp;&amp;amp;b.push(g[c]+Math.max(a[c]|0,-1).toString(36));b.push("i"+a.initiatorType);(1==d._rtn&amp;amp;&amp;amp;d._afjs&amp;gt;n||2==d._rtn)&amp;amp;&amp;amp;b.push("n"+h(a.name));return b.join("_")}).join("*")}function p(){var a="pm",b;for(b in c)c.hasOwnProperty(b)&amp;amp;&amp;amp;(a+="*"+c[b]+"_"+b);return a}function q(){d.log({k:"rtiming",value:l()+"~"+p()},"csm")}if(f&amp;amp;&amp;amp;f.getEntriesByType&amp;amp;&amp;amp;Array.prototype.map&amp;amp;&amp;amp;Array.prototype.filter&amp;amp;&amp;amp;e.ue&amp;amp;&amp;amp;e.ue.log){var g=
+{connectStart:"c",connectEnd:"C",domainLookupStart:"d",domainLookupEnd:"D",duration:"z",fetchStart:"f",redirectStart:"r",redirectEnd:"R",requestStart:"q",responseStart:"s",responseEnd:"S",startTime:"a"},d=e.ue,c={},k=1,n=20,m=200;d&amp;amp;&amp;amp;d._rre&amp;amp;&amp;amp;(d._art=function(){d._ld&amp;amp;&amp;amp;window.setTimeout(q,0)})}})(ue_csm||{},window.performance);
+
+
+(function(c,d){var b=c.ue,a=d.navigator;b&amp;amp;&amp;amp;b.tag&amp;amp;&amp;amp;a&amp;amp;&amp;amp;(a=a.connection||a.mozConnection||a.webkitConnection)&amp;amp;&amp;amp;a.type&amp;amp;&amp;amp;b.tag("netInfo:"+a.type)})(ue_csm,window);
+
+
+(function(c,d){function h(a,b){for(var c=[],d=0;d&amp;lt;a.length;d++){var e=a[d],f=b.encode(e);if(e[k]){var g=b.metaSep,e=e[k],l=b.metaPairSep,h=[],m=void 0;for(m in e)e.hasOwnProperty(m)&amp;amp;&amp;amp;h.push(m+"="+e[m]);e=h.join(l);f+=g+e}c.push(f)}return c.join(b.resourceSep)}function s(a){var b=a[k]=a[k]||{};b[t]||(b[t]=c.ue_mid);b[u]||(b[u]=c.ue_sid);b[f]||(b[f]=c.ue_id);b.csm=1;a="//"+c.ue_furl+"/1/"+a[v]+"/1/OP/"+a[w]+"/"+a[x]+"/"+h([a],y);if(n)try{n.call(d[p],a)}catch(g){c.ue.sbf=1,(new Image).src=a}else(new Image).src=
+a}function q(){g&amp;amp;&amp;amp;g.isStub&amp;amp;&amp;amp;g.replay(function(a,b,c){a=a[0];b=a[k]=a[k]||{};b[f]=b[f]||c;s(a)});l.impression=s;g=null}if(!(1&amp;lt;c.ueinit)){var k="metadata",x="impressionType",v="foresterChannel",w="programGroup",t="marketplaceId",u="session",f="requestId",p="navigator",l=c.ue||{},n=d[p]&amp;amp;&amp;amp;d[p].sendBeacon,r=function(a,b,c,d){return{encode:d,resourceSep:a,metaSep:b,metaPairSep:c}},y=r("","?","&amp;amp;",function(a){return h(a.impressionData,z)}),z=r("/",":",",",function(a){return a.featureName+":"+h(a.resources,
+A)}),A=r(",","@","|",function(a){return a.id}),g=l.impression;n?q():(l.attach("load",q),l.attach("beforeunload",q));d.P&amp;amp;&amp;amp;d.P.register&amp;amp;&amp;amp;d.P.register("impression-client",function(){})}})(ue_csm,window);
+
+
+
+
+var ue_pty = "AuthenticationPortal";
+
+var ue_spty = "SignInClaimCollect";
+
+
+
+var ue_adb = 4;
+ue_csm.ue.exec(function(u,a){function q(){b=f;g();if(h)try{d.setItem(k,b)}catch(a){}}function r(){b=1===a.ue_adb_chk?m:f;g();if(h)try{d.setItem(k,b)}catch(c){}}function g(){l.tag(b);l.isl&amp;amp;&amp;amp;a.uex&amp;amp;&amp;amp;uex("at",b);c&amp;amp;&amp;amp;0&amp;lt;c.ec?n():a.ue_adb_rtla&amp;amp;&amp;amp;c&amp;amp;&amp;amp;(c.elh=n)}function n(){a.ue_adb_rtla&amp;amp;&amp;amp;c&amp;amp;&amp;amp;0&amp;lt;c.ec&amp;amp;&amp;amp;!1===p&amp;amp;&amp;amp;(c.elh=null,ueLogError({m:"Hit Info"},{logLevel:"INFO",adb:b}),p=!0)}var l=a.ue,f="adblk_yes",m="adblk_no",s=a.ue_adb_url||"https://m.media-amazon.com/images/G/01/csm/showads.v2.js",b="adblk_unk",d;a:{try{d=
+a.localStorage;break a}catch(v){}d=void 0}var k="csm:adb",e=a.ue_adb,c=a.ue_err,h=d&amp;amp;&amp;amp;(3===e||4===e||5===e),e=4!==e&amp;amp;&amp;amp;5!==e,p=!1,t=function(){if(d&amp;amp;&amp;amp;h){var a;a:{try{a=d.getItem(k);break a}catch(c){}a=void 0}if(a)return b=a,!0}return!1}();e||!t?l.uels(s,{onerror:q,onload:r}):g();a.ue_isAdb=function(){return b};a.ue_isAdb.unk="adblk_unk";a.ue_isAdb.no=m;a.ue_isAdb.yes=f},"adb")(document,window);
+
+
+
+
+&lt;/script&gt;
+
+&lt;/div&gt;
+
+&lt;noscript&gt;
+    &amp;lt;img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:139-5990735-5698606:WSEG6RBZNQSTMDJVPSKD$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3DWSEG6RBZNQSTMDJVPSKD:0' alt=""/&amp;gt;
+&lt;/noscript&gt;
+
+
+&lt;div class="fwcim-container"&gt;&lt;/div&gt;&lt;div id="a-popover-root" style="z-index:-1;position:absolute;"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180310 15:27:26.762" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180310 15:27:26.762" starttime="20180310 15:27:26.435"></status>
+</kw>
+<msg timestamp="20180310 15:27:26.764" level="FAIL">Page should have contained element 'id=signInSubmit' but did not</msg>
+<status status="FAIL" endtime="20180310 15:27:26.764" starttime="20180310 15:27:26.409"></status>
+</kw>
+<status status="FAIL" endtime="20180310 15:27:26.764" starttime="20180310 15:27:24.666"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180310 15:27:29.824" starttime="20180310 15:27:26.765"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:29.824" starttime="20180310 15:27:26.765"></status>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" endtime="20180310 15:27:29.825" critical="yes" starttime="20180310 15:27:05.498">Page should have contained element 'id=signInSubmit' but did not</status>
+</test>
+<test id="s1-t2" name="Test Case 2">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.amazon.com</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20180310 15:27:29.828" level="INFO">Opening browser 'Chrome' to base url 'http://www.amazon.com'</msg>
+<status status="PASS" endtime="20180310 15:27:35.566" starttime="20180310 15:27:29.828"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180310 15:27:36.696" starttime="20180310 15:27:35.566"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:36.696" starttime="20180310 15:27:29.828"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>this is a demo test...</arg>
+</arguments>
+<msg timestamp="20180310 15:27:36.696" level="INFO">this is a demo test...</msg>
+<status status="PASS" endtime="20180310 15:27:36.696" starttime="20180310 15:27:36.696"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180310 15:27:39.757" starttime="20180310 15:27:36.697"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:39.757" starttime="20180310 15:27:36.697"></status>
+</kw>
+<status status="PASS" endtime="20180310 15:27:39.758" critical="yes" starttime="20180310 15:27:29.827"></status>
+</test>
+<doc>This is some basic info about the whole suite</doc>
+<status status="FAIL" endtime="20180310 15:27:39.760" starttime="20180310 15:27:05.358"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">Smoke</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Amazon" pass="1">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

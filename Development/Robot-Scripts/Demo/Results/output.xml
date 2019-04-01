@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170907 22:28:07.339" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Development\Robot-Scripts\Demo\tests\demo1.robot" id="s1" name="Demo1">
+<test id="s1-t1" name="Test Case 1">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20170907 22:28:07.370" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20170907 22:28:07.370" starttime="20170907 22:28:07.370"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20170907 22:28:07.370" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20170907 22:28:07.370" starttime="20170907 22:28:07.370">No keyword with name 'End Web Test' found.</status>
+</kw>
+<doc>Log in to some site</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" endtime="20170907 22:28:07.370" critical="yes" starttime="20170907 22:28:07.355">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<test id="s1-t2" name="Test Case 2">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20170907 22:28:07.370" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20170907 22:28:07.370" starttime="20170907 22:28:07.370"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20170907 22:28:07.370" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20170907 22:28:07.370" starttime="20170907 22:28:07.370">No keyword with name 'End Web Test' found.</status>
+</kw>
+<doc>Log in to some site</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" endtime="20170907 22:28:07.370" critical="yes" starttime="20170907 22:28:07.370">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<doc>Test test</doc>
+<status status="FAIL" endtime="20170907 22:28:07.370" starttime="20170907 22:28:07.339"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="2" pass="0">Smoke</stat>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="Demo1" pass="0">Demo1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20170907 22:28:07.355" level="ERROR">Error in file 'C:\Development\Robot-Scripts\Demo\tests\demo1.robot': Resource file '.. robot \Resources\Shared.robot' does not exist.</msg>
+</errors>
+</robot>
